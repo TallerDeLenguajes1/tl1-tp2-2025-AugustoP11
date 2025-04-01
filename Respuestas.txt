@@ -1,0 +1,2 @@
+##¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+No veo el archivo tp2_1_2.c porque estoy ubicado en la rama main, ese archivo está en la rama llamada "Opcion_2" y aún no hice un git merge.
