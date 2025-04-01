@@ -1,2 +1,6 @@
 ##¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
 No veo el archivo tp2_1_2.c porque estoy ubicado en la rama main, ese archivo está en la rama llamada "Opcion_2" y aún no hice un git merge.
+
+##En VSCode vuelva al “Source Control” ¿Qué diferencias nota? (Antes de hacer merge)
+Ahora se puede observar como una rama sale de la rama main.
+
