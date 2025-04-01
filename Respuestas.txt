@@ -4,3 +4,5 @@ No veo el archivo tp2_1_2.c porque estoy ubicado en la rama main, ese archivo es
 ##En VSCode vuelva al “Source Control” ¿Qué diferencias nota? (Antes de hacer merge)
 Ahora se puede observar como una rama sale de la rama main.
 
+##En VSCode vuelva al “Source Control” vea los cambios, ¿Qué nota? (Despues del merge)
+Se puede ver como la rama que salio del main, vuelve al main.
