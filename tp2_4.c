@@ -13,7 +13,7 @@ struct compu{
 
 //Funcion principal
 int main() {
-
+    char tipos[6][10]={"Intel","AMD","Celeron","Athlon","Core","Pentium"};
 
 
     getchar();
