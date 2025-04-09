@@ -14,6 +14,7 @@ struct compu{
 //Declaracion de funciones
 void listarPCs(struct compu pcs[], int cantidad);
 
+void mostrarMasVieja(struct compu pcs[], int cantidad);
 
 //Funcion principal
 int main() {
@@ -39,13 +40,15 @@ int main() {
         pcs[i].cantidad_nucleos = 1 + rand() % (8 - 1 + 1);
 
         //Hago que el campo tipo_cpu apunte a un string aleatorio del arreglo tipos
-        j = rand() % (5 + 1);
-        pcs[i].tipo_cpu = &tipos[j][10];
+        j = rand() % (6);
+        pcs[i].tipo_cpu = tipos[j];
     }    
 
     //Invoco la funcion para listar las PCs
     listarPCs(pcs,5);
 
+    //Invoco la funcion para mostrar las caracteristicas de la PC o PCs mas viejas
+    mostrarMasVieja(pcs,5);
 
     getchar();
     return 0;
@@ -62,5 +65,33 @@ void listarPCs(struct compu pcs[], int cantidad){
         printf("Anio: %d\n", pcs[i].anio);
         printf("Cantidad de nucleos: %d\n", pcs[i].cantidad_nucleos);
         printf("Tipo de CPU: %s\n", pcs[i].tipo_cpu);
+    }
+}
+
+void mostrarMasVieja(struct compu pcs[], int cantidad) {
+    int i = 0, anioMasAntiguo = 2024;
+
+    printf("\n\n------------------------------------\nCARACTERISTICAS DE LAS PC MAS ANTIGUAS:\n");
+
+    //Averiguo cual es el anio mas antiguo de las 5 PCs
+    for (i = 0; i < cantidad; i++)
+    {
+        if (pcs[i].anio < anioMasAntiguo)
+        {
+            anioMasAntiguo = pcs[i].anio;
+        }
+    }
+
+    //Muestro las caracteristicas de las PCs que tengan el anio mas antiguo
+    for (i = 0; i < cantidad; i++)
+    {
+        if (pcs[i].anio == anioMasAntiguo)
+        {
+            printf("\nCARACTERISTICAS DE PC %d\n",(i+1));
+            printf("Velocidad: %dGHz\n", pcs[i].velocidad);
+            printf("Anio: %d\n", pcs[i].anio);
+            printf("Cantidad de nucleos: %d\n", pcs[i].cantidad_nucleos);
+            printf("Tipo de CPU: %s\n", pcs[i].tipo_cpu);
+        }
     }
 }
