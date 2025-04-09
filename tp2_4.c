@@ -16,6 +16,8 @@ void listarPCs(struct compu pcs[], int cantidad);
 
 void mostrarMasVieja(struct compu pcs[], int cantidad);
 
+void mostrarMasVeloz(struct compu pcs[], int cantidad);
+
 //Funcion principal
 int main() {
     //Declaracion de variables
@@ -49,6 +51,10 @@ int main() {
 
     //Invoco la funcion para mostrar las caracteristicas de la PC o PCs mas viejas
     mostrarMasVieja(pcs,5);
+
+    //Invoco la funcion para mostrar las caracteristicas de las PCs con mayor velocidad de procesamiento
+    mostrarMasVeloz(pcs,5);
+
 
     getchar();
     return 0;
@@ -86,6 +92,34 @@ void mostrarMasVieja(struct compu pcs[], int cantidad) {
     for (i = 0; i < cantidad; i++)
     {
         if (pcs[i].anio == anioMasAntiguo)
+        {
+            printf("\nCARACTERISTICAS DE PC %d\n",(i+1));
+            printf("Velocidad: %dGHz\n", pcs[i].velocidad);
+            printf("Anio: %d\n", pcs[i].anio);
+            printf("Cantidad de nucleos: %d\n", pcs[i].cantidad_nucleos);
+            printf("Tipo de CPU: %s\n", pcs[i].tipo_cpu);
+        }
+    }
+}
+
+void mostrarMasVeloz(struct compu pcs[], int cantidad) {
+    int i = 0, mayorVelocidad = 0;
+
+    printf("\n\n------------------------------------\nCARACTERISTICAS DE LAS PC CON MAYOR VELOCIDAD DE PROCESAMIENTO:\n");
+
+    //Averiguo cual es la mayor velocidad de procesamiento
+    for (i = 0; i < cantidad; i++)
+    {
+        if (pcs[i].velocidad > mayorVelocidad)
+        {
+            mayorVelocidad = pcs[i].velocidad;
+        }
+    }
+
+    //Muestro las caracteristicas de las PCs con mayor velocidad de procesamiento
+    for (i = 0; i < cantidad; i++)
+    {
+        if (pcs[i].velocidad == mayorVelocidad)
         {
             printf("\nCARACTERISTICAS DE PC %d\n",(i+1));
             printf("Velocidad: %dGHz\n", pcs[i].velocidad);
